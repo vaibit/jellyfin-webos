@@ -3,7 +3,7 @@
     "icon": "assets/icon-80.png",
     "main": "index.html",
     "bgImage": "assets/splash.png",
-    "title": "Jellyfin",
+    "title": "Jellyfin YT",
     "type": "web",
     "version": "1.2.2",
     "splashBackground": "assets/splash.png",
@@ -11,6 +11,6 @@
     "vendor": "Jellyfin Project",
     "largeIcon": "assets/icon-130.png",
     "iconColor": "#000b25",
-    "id": "org.jellyfin.webos",
+    "id": "org.jellyfin.webos.yt",
     "disableBackHistoryAPI": true
 }

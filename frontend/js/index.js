@@ -475,6 +475,18 @@ window.addEventListener('message', function (msg) {
         case 'AppHost.exit':
             webOS.platformBack();
             break;
+        case 'launchYouTube':
+            webOS.service.request('luna://com.webos.applicationManager', {
+                method: 'launch',
+                parameters: {
+                    id: 'youtube.leanback.v4',
+                    params: { contentTarget: 'https://www.youtube.com/tv?v=' + msg.data.videoId }
+                },
+                onFailure: function (err) {
+                    console.error('Failed to launch YouTube app', err);
+                }
+            });
+            break;
     }
 });
 
@@ -572,7 +584,7 @@ function startDiscovery() {
         return;
     }
     console.log("Starting server autodiscovery...");
-    discover = webOS.service.request("luna://org.jellyfin.webos.service", {
+    discover = webOS.service.request("luna://org.jellyfin.webos.yt.service", {
         method: "discover",
         parameters: {
             uniqueToken: 'fooo'
